@@ -1,5 +1,5 @@
 import Functions
-
+6
 #                                                                    (((MAIN PROGRAM)))
 
 
@@ -13,15 +13,16 @@ while (exit != 'Y'):
     print('Enter (3) To Delete Data')
     print('Enter (4) To Find In Data')
     print('Enter (5) To Read All Data')
-    print('Enter (6) To Exit\n')
+    print('Enter (6) To Enter Custom SQL Query')
+    print('Enter (7) To Exit\n')
 
     while(True):
     
         try:
-            user_input = int(input('Enter Option: '))
+            user_input = int(input('\nEnter Option: '))
             break
         except ValueError:
-            print('(ERROR) "Enter Number Only"')
+            print('(ERROR) "Enter Number Only"\n')
 
 
 #                                                                    INSERT
@@ -37,8 +38,14 @@ while (exit != 'Y'):
 Enter (1) For Name
 Enter (2) For Contact Number
 Enter (3) For Dept''')
+
+        while(True):
+            try:
+                update = int(input("\nEnter Option: "))
+                break
+            except ValueError:
+                print('(ERROR) "Enter Number Only"\n')
         
-        update = int(input("Enter Option: "))
 
         if (update == 1):
             Functions.Update_Name()
@@ -55,8 +62,14 @@ Enter (3) For Dept''')
 
         else:
             while(update != 1 and update != 2 and update != 3):
-                update = int(input("Enter The Right Value. Type (1) To Update Name, Type (2) To Update Contact, Type (3) To Update Dept: "))
 
+                while(True):
+                    try:
+                        update = int(input("Enter The Right Value. Type (1) To Update Name, Type (2) To Update Contact, Type (3) To Update Dept: "))
+                        break
+                    except ValueError:
+                        print('(ERROR) "Enter Number Only"\n')
+                
                 if (update == 1):
                     Functions.Update_Name()
                     print("\n==(DATA UPDATED SUCCESSFULLY)==\n")
@@ -83,7 +96,12 @@ Enter (1) For Name
 Enter (2) For Contact Number
 Enter (3) For Dept''')
         
-        find = int(input("Enter Option: "))
+        while(True):
+            try:
+                find = int(input("\nEnter Option: "))
+                break
+            except ValueError:
+                print('(ERROR) "Enter Number Only"\n')
 
         if (find == 1):
             Functions.Find_Name()
@@ -99,7 +117,13 @@ Enter (3) For Dept''')
 
         else:
             while (find != 1 and find != 2 and find != 3):
-                find = int(input("Enter The Right Value. Type (1) To Find Name, Type (2) To Find Contact, Type (3) To Find Dept: "))
+
+                while(True):
+                    try:
+                        find = int(input("Enter The Right Value. Type (1) To Find Name, Type (2) To Find Contact, Type (3) To Find Dept: "))
+                        break
+                    except ValueError:
+                        print('(ERROR) "Enter Number Only"\n')
 
                 if (find == 1):
                     Functions.Find_Name()
@@ -118,9 +142,17 @@ Enter (3) For Dept''')
     elif (user_input == 5):
         Functions.Read_All()
 
-#                                                                    EXIT FROM MENU
+#                                                                    CUSTOM QUERY
 
     elif (user_input == 6):
+        sql = input("Write Custom Query: ")
+
+        Functions.Custom_Query(sql)
+        print("\n==(QUERY EXECUTED)==\n")
+
+#                                                                    EXIT FROM MENU
+
+    elif (user_input == 7):
         break
 
     else:
