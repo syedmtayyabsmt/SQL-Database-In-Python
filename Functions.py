@@ -123,3 +123,8 @@ def Read_All():
             n += 1
 
         print("\n")
+
+def Custom_Query(SQL):
+    
+    cursor.execute(SQL)
+    connection.commit()
