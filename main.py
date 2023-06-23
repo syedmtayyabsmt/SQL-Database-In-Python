@@ -1,7 +1,6 @@
 import Functions
-6
-#                                                                    (((MAIN PROGRAM)))
 
+#                                                                    (MAIN MENU)
 
 while (exit != 'Y'):
 
@@ -37,7 +36,9 @@ while (exit != 'Y'):
         print('''What Do You Want To Update ?
 Enter (1) For Name
 Enter (2) For Contact Number
-Enter (3) For Dept''')
+Enter (3) For Dept
+Enter (4) To Go Back''')
+        update = ''
 
         while(True):
             try:
@@ -46,11 +47,9 @@ Enter (3) For Dept''')
             except ValueError:
                 print('(ERROR) "Enter Number Only"\n')
         
-
         if (update == 1):
             Functions.Update_Name()
             print("\n==(DATA UPDATED SUCCESSFULLY)==\n")
-
 
         elif (update == 2):
             Functions.Update_Contact()
@@ -60,12 +59,15 @@ Enter (3) For Dept''')
             Functions.Update_Dept()
             print("\n==(DATA UPDATED SUCCESSFULLY)==\n")
 
+        elif (update == 4):
+            continue
+
         else:
-            while(update != 1 and update != 2 and update != 3):
+            while(update != 1 and update != 2 and update != 3 and update != 4):
 
                 while(True):
                     try:
-                        update = int(input("Enter The Right Value. Type (1) To Update Name, Type (2) To Update Contact, Type (3) To Update Dept: "))
+                        update = int(input("Enter The Right Value. Type (1) To Update Name, Type (2) To Update Contact, Type (3) To Update Dept, Type (4) To Go Back: "))
                         break
                     except ValueError:
                         print('(ERROR) "Enter Number Only"\n')
@@ -82,6 +84,9 @@ Enter (3) For Dept''')
                     Functions.Update_Dept()
                     print("\n==(DATA UPDATED SUCCESSFULLY)==\n")
 
+                elif (update == 4):
+                    continue
+
 #                                                                    DELETE
 
     elif (user_input == 3):
@@ -94,7 +99,8 @@ Enter (3) For Dept''')
         print('''What Do You Want To Find ?
 Enter (1) For Name
 Enter (2) For Contact Number
-Enter (3) For Dept''')
+Enter (3) For Dept
+Enter (4) To Go Back''')
         
         while(True):
             try:
@@ -115,8 +121,11 @@ Enter (3) For Dept''')
             Functions.Find_Dept()
             print("\n==(DATA FOUND)==\n")
 
+        elif (find == 4):
+            continue
+
         else:
-            while (find != 1 and find != 2 and find != 3):
+            while (find != 1 and find != 2 and find != 3 and find != 4):
 
                 while(True):
                     try:
@@ -136,6 +145,9 @@ Enter (3) For Dept''')
                 elif (find == 3):
                     Functions.Find_Dept()
                     print("\n==(DATA FOUND)==\n")
+
+                elif (find == 4):
+                    continue
 
 #                                                                    READ ALL DATA
 
