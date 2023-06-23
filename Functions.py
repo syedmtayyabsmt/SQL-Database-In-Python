@@ -1,4 +1,5 @@
 import mysql.connector as SQLC
+from tkinter import *
 
 connection = SQLC.connect(
              host = 'Localhost',
@@ -7,7 +8,7 @@ connection = SQLC.connect(
              database = 'first_database')
 cursor = connection.cursor()
 
-#                                                                    FUNCTIONS
+#                                                                    MAIN FUNCTIONS
 
 def Insert():
     print("\n(((((INSERT DATA)))))")
@@ -125,6 +126,39 @@ def Read_All():
         print("\n")
 
 def Custom_Query(SQL):
-    
+
     cursor.execute(SQL)
     connection.commit()
+
+#                                                                    GUI FUNCTIONS
+
+def Insert_Label(text_t, x, y):
+
+    label = Label(
+                text = text_t,
+                font = 'Montserrat',
+                background = 'Red',
+                foreground = 'White',
+                width = 40 )
+    
+    label.place( x = x, y = y )
+
+def Insert_Text_Box(x, y):
+
+    text_box = Entry(
+                font = "Montserrat",
+                background = 'White',
+                foreground = 'Black',
+                width = 37)
+    
+    text_box.place(x = x, y = y)
+
+def Insert_Button(text, x, y):
+
+    button = Button(
+                text = text,
+                background = 'Black',
+                foreground = 'White',
+                font = 'Montserrat')
+    
+    button.place (x = x , y = y)
