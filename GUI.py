@@ -8,32 +8,58 @@ window.title("SQL DATABASE")
 window.geometry('1370x768')
 window.config( bg = 'dark gray')
 
-#                                                                    LABELS
 
-Functions.Insert_Label('INSERT DATA', 20, 20)
-Functions.Insert_Label('UPDATE DATA', 20, 120)
-Functions.Insert_Label('DELETE DATA', 20, 220)
-Functions.Insert_Label('FIND DATA', 20, 320)
-Functions.Insert_Label('READ ALL DATA', 20, 420)
-Functions.Insert_Label('ENTER  CUSTOM  SQL  QUERY', 20, 520)
 
-#                                                                    TEXT BOX
+menu = '''
+===================================================
+What Operation Do You Want To Perform On Database ?
+===================================================
+Enter (1) To Insert Data
 
-Functions.Insert_Text_Box(20, 50)
-Functions.Insert_Text_Box(20, 150)
-Functions.Insert_Text_Box(20, 250)
-Functions.Insert_Text_Box(20, 350)
-Functions.Insert_Text_Box(20, 450)
-Functions.Insert_Text_Box(20, 550)
+Enter (2) To Update Data
 
-#                                                                    BUTTON
+Enter (3) To Delete Data
 
-Functions.Insert_Button('INSERT DATA', 20, 80)
-Functions.Insert_Button('UPDATE DATA', 20, 180)
-Functions.Insert_Button('DELETE DATA', 20, 280)
-Functions.Insert_Button('FIND DATA', 20, 380)
-Functions.Insert_Button('READ ALL DATA', 20, 480)
-Functions.Insert_Button('ENTER  CUSTOM  SQL  QUERY', 20, 580)
+Enter (4) To Find In Data
+
+Enter (5) To Read All Data
+
+Enter (6) To Enter Custom SQL Query
+
+Enter (7) To Exit'''
+
+label = Label(
+            text = menu,
+            font = 'Montserrat',
+            background = 'Red',
+            foreground = 'White',
+            width = 130)
+label.place( x = 20, y = 20 )
+
+
+# Text Box
+text_box = Entry(
+                font = "Montserrat",
+                background = 'White',
+                foreground = 'Black',
+                width = 118)
+text_box.place(x = 20, y = 450)
+
+# Button
+button = Button(
+                text = "ENTER OPERATION",
+                font = 'Montserrat',
+                background = 'Black',
+                foreground = 'White')
+button.place(x = 570, y = 500)
+    
+
+
+
+print(text_box.get())
+
+
+
 
 
 
