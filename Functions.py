@@ -157,8 +157,8 @@ def Insert_Button(text, x, y):
 
     button = Button(
                 text = text,
+                font = 'Montserrat',
                 background = 'Black',
-                foreground = 'White',
-                font = 'Montserrat')
+                foreground = 'White')
     
     button.place (x = x , y = y)
