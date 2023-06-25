@@ -63,6 +63,8 @@ Enter (4) To Go Back''')
             continue
 
         else:
+            update = ''
+
             while(update != 1 and update != 2 and update != 3 and update != 4):
 
                 while(True):
@@ -85,7 +87,14 @@ Enter (4) To Go Back''')
                     print("\n==(DATA UPDATED SUCCESSFULLY)==\n")
 
                 elif (update == 4):
-                    continue
+                    update = 4
+                    break
+
+            if (update == 4):
+                continue
+
+            else:
+                pass
 
 #                                                                    DELETE
 
@@ -125,11 +134,13 @@ Enter (4) To Go Back''')
             continue
 
         else:
+            find = ''
+
             while (find != 1 and find != 2 and find != 3 and find != 4):
 
                 while(True):
                     try:
-                        find = int(input("Enter The Right Value. Type (1) To Find Name, Type (2) To Find Contact, Type (3) To Find Dept: "))
+                        find = int(input("Enter The Right Value. Type (1) To Find Name, Type (2) To Find Contact, Type (3) To Find Dept, Type (4) To Go Back: "))
                         break
                     except ValueError:
                         print('(ERROR) "Enter Number Only"\n')
@@ -147,7 +158,14 @@ Enter (4) To Go Back''')
                     print("\n==(DATA FOUND)==\n")
 
                 elif (find == 4):
-                    continue
+                    find = 4
+                    break
+            
+            if (find == 4):
+                continue
+
+            else:
+                pass
 
 #                                                                    READ ALL DATA
 
@@ -168,6 +186,7 @@ Enter (4) To Go Back''')
         break
 
     else:
+        print("\n(((Wrong Command))) || Enter Only 1 To 7\n")
         continue
 
 #                                                                    EXIT FROM QUESTION
@@ -188,6 +207,7 @@ Enter (4) To Go Back''')
             if (exit == 'Y'):
                 Functions.connection.close()
                 break
+
             elif (exit == 'N'):
                 continue
 
